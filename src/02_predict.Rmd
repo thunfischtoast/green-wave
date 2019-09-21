@@ -106,6 +106,8 @@ cv <- xgb.cv(data = dtrain,
              early_stopping_rounds = 100,
              callbacks = callbacks)
 
+# save the best model
+saveRDS(cv$models[[1]], file = "model.Rds")
 ```
 
 # Compare predictions to truth
